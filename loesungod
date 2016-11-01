@@ -1,0 +1,45 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using wServer.logic.behaviors;
+using System.Threading.Tasks;
+using wServer.logic.transitions;
+using wServer.logic.loot;
+
+namespace wServer.logic
+{
+    partial class BehaviorDb
+    {
+        private _ //put name here = () => Behav()
+        
+          .Init("Sun God",
+            new State(
+              new State(
+                new Wander(1.0),
+                new Shoot(radius: 12, count: 7, angleOffset: 15 / 3, projectileIndex: //Addnumber, coolDown: 950),
+                new Shoot(radius: 27, projectileIndex: //addnumber, count: 24, coolDown: 30000),
+                new Shoot(radius: 6.5, count: 4, shootAngle 40, projectileIndex: //addnumber, coolDown: 4000),
+                new HpLessTransition(0.20, "You tiny mortal.  YOU TEST MY PATIENCE.  DIE BY FIRE!")
+                
+            ),
+            new State("You tiny mortal.  YOU TEST MY PATIENCE.  DIE BY FIRE!",
+                new ConditionalEffect(ConditionEffectIndex.Invulnerable),
+                new Follow(2.0, acquireRange: 17, range: 20),
+                new Shoot(radius: 20, count: 7, angleOffset: 20 / 3, projectileIndex: //addnumber, coolDown: 750, predictive 1.5),
+                new HpLessTransition(0.60, "NOW, YOU WILL BEAR WITNESS TO A TRUE GOD.  DIE AT MY FEET!")
+            ),
+            new State("NOW, YOU WILL BEAR WITNESS TO A TRUE GOD.  DIE AT MY FEET!,
+                new Wander(1.5),
+                new Shoot(radius: 35, count: 16, angleOffset: 25 / 3, projectileIndex: //addnumber, coolDown: 550),
+                new Shoot(radius: 18, projectileIndex: //addnumber, count: 12, coolDown: 30000),
+                new Shoot(radius: 5, count: 20, shootAngle: 45, projectileIndex: //addnumber, coolDown: 500),
+                new TimedTransition(4344, "You have beaten me this time... Next time you won't be so lucky...")
+                
+                
+            new State("You have beaten me this time... Next time you won't be so lucky...",
+                new Shoot(45, projectileIndex: //addnumber, count: 25),
+                new Shoot(45, projectileIndex: //add(diff)number, count: 25),
+                new Suicide()
+                )
+            ),
