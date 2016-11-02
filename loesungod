@@ -63,3 +63,28 @@ namespace wServer.logic
                     ),
                 new ItemLoot("Mischeivous Imp Skin", awesomeloot),
                 new ItemLoot("Wine Cellar Incantation", awesomeloot)
+                
+                )
+                
+        )
+        
+      .Init("Sun Minion",
+              new State(
+                  new Follow(2.0, acquireRange: 16, range: 12),
+                  new Shoot(15, 4, 6, angleOffset: 24 / 3, projectileIndex: 0, coolDown: 180)
+              ),
+              new MostDamagers(5,
+                    new OnlyOne(
+                        new ItemLoot("KoalaPOW", awesomeloot)
+                        ),
+                        new TierLoot(7, ItemType.Weapon, poorloot),
+                        new TierLoot(8, ItemType.Weapon, mediumloot),
+                        new TierLoot(9, ItemType.Weapon, mediumloot),
+                        new TierLoot(10, ItemType.Armor, mediumloot),
+                        new TierLoot(8, ItemType.Armor, mediumloot),
+                        new TierLoot(7, ItemType.Armor, poorloot)
+                        )
+                )
+            ;
+    }
+}
