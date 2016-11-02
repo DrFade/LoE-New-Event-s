@@ -43,3 +43,23 @@ namespace wServer.logic
                 new Suicide()
                 )
             ),
+        new MostDamagers(7,
+            new TierLoot(11, ItemType.Weapon, goodloot),
+            new TierLoot(12, ItemType.Weapon, greatloot),
+            new TierLoot(11, ItemType.Armor, normalloot),
+            new TierLoot(12, ItemType.Armor, goodloot),
+            new TierLoot(5, ItemType.Ring, goodloot),
+            new TierLoot(6, ItemType.Ring, greatloot),
+            new TierLoot(5, ItemType.Ability, goodloot),
+            new TierLoot(6, ItemType.Ability, greatloot),
+            new ItemLoot("KoalaPOW", awesomeloot)
+            ),
+        new MostDamagers(3,
+            new OnlyOne(
+                new ItemLoot("Staff of the Rising Sun", superbag),
+                new ItemLoot("Thosuand Sun Spell", superbag),
+                new ItemLoot("Robe of the Summer Solstice", superbag),
+                new ItemLoot("Ring of the Burning Sun", superbag)
+                    ),
+                new ItemLoot("Mischeivous Imp Skin", awesomeloot),
+                new ItemLoot("Wine Cellar Incantation", awesomeloot)
