@@ -11,7 +11,7 @@ namespace wServer.logic
 {
     partial class BehaviorDb
     {
-        private _ //put name here = () => Behav()
+        _ Sun God = () => Behav()
         
           .Init("Sun God",
             new State(
@@ -19,6 +19,7 @@ namespace wServer.logic
                 new Wander(1.0),
                 new Shoot(radius: 12, count: 7, angleOffset: 15 / 3, projectileIndex: //Addnumber, coolDown: 950),
                 new Shoot(radius: 27, projectileIndex: //addnumber, count: 24, coolDown: 30000),
+                new Taunt("Ha... ha.. you test me. Soon, you will learn),
                 new Shoot(radius: 6.5, count: 4, shootAngle 40, projectileIndex: //addnumber, coolDown: 4000),
                 new HpLessTransition(0.20, "You tiny mortal.  YOU TEST MY PATIENCE.  DIE BY FIRE!")
                 
