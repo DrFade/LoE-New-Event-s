@@ -1,3 +1,94 @@
+Note:
+
+
+
+
+
+
+
+<Object type = "0x5170" id="Lord of Death">
+   <DisplayId>Lord of Death</DisplayId>
+   <Class>Character</Class>
+   <Enemy/>
+    <AnimatedTexture>
+        <File>chars16x16dMountains1</File>
+        <Index>0x09</Index>
+    </AnimatedTexture>
+   <Size>150</Size>
+   <MaxHitPoints>150000</MaxHitPoints>
+   <Defense>65</Defense>
+   <StunImmune/>
+   <Quest/>
+   <Level>20</Level>
+   <ParalyzeImmune/>
+   <StasisImmune/>
+   <DazedImmune/>
+   <XpMult>0.5</XpMult>
+   <AltTexture id = "1" >
+     < Texture >
+       < File > lofiObjBig </ File >
+       < Index > 0x152 </ Index >
+     </ Texture >
+   </ AltTexture >
+   < Projectile id="0">
+     <ObjectId>Fire Claw</ObjectId>
+     <Speed>99</Speed>
+     <Damage>120</Damage>
+     <LifetimeMS>2000</LifetimeMS>
+     <ConditionEffect duration = "3" > Sick </ ConditionEffect >
+     < ConditionEffect duration= "4" > Weak </ ConditionEffect >
+     < Boomerang />
+   </ Projectile >
+   < Projectile id= "1" >
+     < ObjectId > Vortex </ ObjectId >
+     < Damage > 250 </ Damage >
+     < Speed > 22 </ Speed >
+     < Size > 200 </ Size >
+     < LifetimeMS > 9000 </ LifetimeMS >
+     < ConditionEffect duration= "6" > Quiet </ ConditionEffect >
+     < ConditionEffect duration= "3" > Unstable </ ConditionEffect >
+    </ Projectile >
+    < Projectile id= "3" >
+     < ObjectId > Fire Boomerang</ObjectId>
+     <Speed>22</Speed>
+     <Damage>50</Damage>
+     <LifetimeMS>2000</LifetimeMS>
+     <ConditionEffect duration = "3" > Bleeding </ ConditionEffect >
+    </ Projectile >
+    < Projectile id= "4" >
+     < ObjectId > Directed Explosion</ObjectId>
+     <Speed>10</Speed>
+     <Damage>330</Damage>
+     <LifetimeMS>9999</LifetimeMS>
+     <ConditionEffect duration = "10" > Stunned </ ConditionEffect >
+   </ Projectile >
+   < Projectile id= "5" >
+     < ObjectId > Silence Bullet</ObjectId>
+     <Speed>100</Speed>
+     <Damage>75</Damage>
+     <LifetimeMS>3000</LifetimeMS>
+     <ConditionEffect duration = "10" > Quiet </ ConditionEffect >
+   </ Projectile >
+   < Projectile id= "6" >
+     < ObjectId > Large Blue Shuriken</ ObjectId >
+     < Speed > 40 </ Speed >
+     < Damage > 50 </ Damage >
+     < LifetimeMS > 3000 </ LifetimeMS >
+     < Size > 120 </ Size >
+     < ConditionEffect duration = "3" > Sick </ ConditionEffect >
+   </ Projectile >
+   < Projectile id= "7" >
+     < ObjectId > Purple Bolt</ ObjectId >
+     < Speed > 70 </ Speed >
+     < Damage > 70 </ Damage >
+     < LifetimeMS > 1200 </ LifetimeMS >
+   </ Projectile >
+
+
+
+
+
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
