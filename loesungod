@@ -70,14 +70,14 @@ namespace wServer.logic
                 
             new State("Rage",
                 new Taunt(1.0, true, "You have pushed me too far... Bear witness to my wrath mortal!"),
-							new Taunt(1.0, true, "DIE IN HELL, LET THE SUN CONSUME YOU!"),
-							   new Charge(2, 15, coolDown: 4500),
-					         new Taunt(1.0, true, "YOU CANNOT IMAGINE MY POWER MORTAL!"),
-						      new Flash(0xFFFFFF, 2, 2),
-					         new Shoot(radius: 18, count: 12, angleOffset: 30 / 3, projectileIndex: 0, coolDown: 450),
-					         new Shoot(radius: 35, projectileIndex: 4, count: 37, coolDown: 50000),
-					         new Shoot(radius: 9.4, count: 14, shootAngle: 40, projectileIndex: 3, coolDown: 700),
-					         new TimedTransition(14344, "death")
+		new Taunt(1.0, true, "DIE IN HELL, LET THE SUN CONSUME YOU!"),
+		new Charge(2, 15, coolDown: 4500),
+	 	new Taunt(1.0, true, "YOU CANNOT IMAGINE MY POWER MORTAL!"),								
+		new Flash(0xFFFFFF, 2, 2),
+		new Shoot(radius: 18, count: 12, angleOffset: 30 / 3, projectileIndex: 0, coolDown: 450),
+		new Shoot(radius: 35, projectileIndex: 4, count: 37, coolDown: 50000),
+		new Shoot(radius: 9.4, count: 14, shootAngle: 40, projectileIndex: 3, coolDown: 700),	
+		new TimedTransition(14344, "death")
                 
                 
             new State("death",
