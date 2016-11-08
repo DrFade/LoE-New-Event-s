@@ -1,88 +1,25 @@
-Note:
-
-
-
-
-
-
-
-<Object type = "0x5170" id="Lord of Death">
-   <DisplayId>Lord of Death</DisplayId>
-   <Class>Character</Class>
-   <Enemy/>
-    <AnimatedTexture>
-        <File>chars16x16dMountains1</File>
-        <Index>0x09</Index>
-    </AnimatedTexture>
-   <Size>150</Size>
-   <MaxHitPoints>150000</MaxHitPoints>
-   <Defense>65</Defense>
-   <StunImmune/>
-   <Quest/>
-   <Level>20</Level>
-   <ParalyzeImmune/>
-   <StasisImmune/>
-   <DazedImmune/>
-   <XpMult>0.5</XpMult>
-   <AltTexture id = "1" >
-     < Texture >
-       < File > lofiObjBig </ File >
-       < Index > 0x152 </ Index >
-     </ Texture >
-   </ AltTexture >
-   < Projectile id="0">
-     <ObjectId>Fire Claw</ObjectId>
-     <Speed>99</Speed>
-     <Damage>120</Damage>
-     <LifetimeMS>2000</LifetimeMS>
-     <ConditionEffect duration = "3" > Sick </ ConditionEffect >
-     < ConditionEffect duration= "4" > Weak </ ConditionEffect >
-     < Boomerang />
+ < Projectile id= "1" >
+    < ObjectId > Vortex </ ObjectId >
+    < Damage > 250 </ Damage >
+    < Speed > 22 </ Speed >
+    < Size > 200 </ Size >
+    < LifetimeMS > 9000 </ LifetimeMS >
+    < ConditionEffect duration= "6" > Quiet </ ConditionEffect >
+    < ConditionEffect duration= "3" > Unstable </ ConditionEffect >
    </ Projectile >
-   < Projectile id= "1" >
-     < ObjectId > Vortex </ ObjectId >
-     < Damage > 250 </ Damage >
-     < Speed > 22 </ Speed >
-     < Size > 200 </ Size >
-     < LifetimeMS > 9000 </ LifetimeMS >
-     < ConditionEffect duration= "6" > Quiet </ ConditionEffect >
-     < ConditionEffect duration= "3" > Unstable </ ConditionEffect >
-    </ Projectile >
-    < Projectile id= "3" >
-     < ObjectId > Fire Boomerang</ObjectId>
-     <Speed>22</Speed>
-     <Damage>50</Damage>
-     <LifetimeMS>2000</LifetimeMS>
-     <ConditionEffect duration = "3" > Bleeding </ ConditionEffect >
-    </ Projectile >
-    < Projectile id= "4" >
-     < ObjectId > Directed Explosion</ObjectId>
-     <Speed>10</Speed>
-     <Damage>330</Damage>
-     <LifetimeMS>9999</LifetimeMS>
-     <ConditionEffect duration = "10" > Stunned </ ConditionEffect >
-   </ Projectile >
-   < Projectile id= "5" >
-     < ObjectId > Silence Bullet</ObjectId>
-     <Speed>100</Speed>
-     <Damage>75</Damage>
-     <LifetimeMS>3000</LifetimeMS>
-     <ConditionEffect duration = "10" > Quiet </ ConditionEffect >
-   </ Projectile >
-   < Projectile id= "6" >
-     < ObjectId > Large Blue Shuriken</ ObjectId >
-     < Speed > 40 </ Speed >
-     < Damage > 50 </ Damage >
-     < LifetimeMS > 3000 </ LifetimeMS >
-     < Size > 120 </ Size >
-     < ConditionEffect duration = "3" > Sick </ ConditionEffect >
-   </ Projectile >
-   < Projectile id= "7" >
-     < ObjectId > Purple Bolt</ ObjectId >
-     < Speed > 70 </ Speed >
-     < Damage > 70 </ Damage >
-     < LifetimeMS > 1200 </ LifetimeMS >
-   </ Projectile >
+   
+   
+   < Projectile id= "3" >
+      < ObjectId > addimghere </ ObjectId >
+      < Damage > 275 </ Damage >
+      < Speed > 25 </ Speed >
+      < Size > 225 </ Size >
+      < LifetimeMS > 10000 </ LifetimeMS >
+      < ConditionEffect duration= "4" > Bleeding </ ConditionEffect >
+      < ConditionEffect duration= "7" > Unstable </ ConditionEffect >
+     </ Projectile >
+
+
 
 
 
@@ -112,26 +49,41 @@ namespace wServer.logic
                 new Shoot(radius: 27, projectileIndex: //addnumber, count: 24, coolDown: 30000),
                 new Taunt("Ha... ha.. you test me. Soon, you will learn),
                 new Shoot(radius: 6.5, count: 4, shootAngle 40, projectileIndex: //addnumber, coolDown: 4000),
-                new HpLessTransition(0.20, "You tiny mortal.  YOU TEST MY PATIENCE.  DIE BY FIRE!")
+                new HpLessTransition(0.20, "Die")
                 
             ),
-            new State("You tiny mortal.  YOU TEST MY PATIENCE.  DIE BY FIRE!",
+            new State("Die",
                 new ConditionalEffect(ConditionEffectIndex.Invulnerable),
                 new Follow(2.0, acquireRange: 17, range: 20),
-                new Shoot(radius: 20, count: 7, angleOffset: 20 / 3, projectileIndex: //addnumber, coolDown: 750, predictive 1.5),
-                new HpLessTransition(0.60, "NOW, YOU WILL BEAR WITNESS TO A TRUE GOD.  DIE AT MY FEET!")
+               new Taunt(1.0, true, "You tiny mortal.  YOU TEST MY PATIENCE.  DIE BY FIRE!"),
+               new Shoot(radius: 20, count: 7, angleOffset: 20 / 3, projectileIndex: //addnumber, coolDown: 750, predictive 1.5),
+                new HpLessTransition(0.6, "Prerage")
             ),
-            new State("NOW, YOU WILL BEAR WITNESS TO A TRUE GOD.  DIE AT MY FEET!,
+            new State("Prerage",
                 new Wander(1.5),
                 new Shoot(radius: 35, count: 16, angleOffset: 25 / 3, projectileIndex: //addnumber, coolDown: 550),
+                new Taunt(1.0, true, "NOW, YOU WILL BEAR WITNESS TO A TRUE GOD.  DIE AT MY FEET!"),
                 new Shoot(radius: 18, projectileIndex: //addnumber, count: 12, coolDown: 30000),
                 new Shoot(radius: 5, count: 20, shootAngle: 45, projectileIndex: //addnumber, coolDown: 500),
-                new TimedTransition(4344, "You have beaten me this time... Next time you won't be so lucky...")
+                new HpLessTransition(0.2, "Rage")
                 
                 
-            new State("You have beaten me this time... Next time you won't be so lucky...",
-                new Shoot(45, projectileIndex: //addnumber, count: 25),
-                new Shoot(45, projectileIndex: //add(diff)number, count: 25),
+            new State("Rage",
+                new Taunt(1.0, true, "You have pushed me too far... Bear witness to my wrath mortal!"),
+							new Taunt(1.0, true, "DIE IN HELL, LET THE SUN CONSUME YOU!"),
+							   new Charge(2, 15, coolDown: 4500),
+					         new Taunt(1.0, true, "YOU CANNOT IMAGINE MY POWER MORTAL!"),
+						      new Flash(0xFFFFFF, 2, 2),
+					         new Shoot(radius: 18, count: 12, angleOffset: 30 / 3, projectileIndex: 0, coolDown: 450),
+					         new Shoot(radius: 35, projectileIndex: 4, count: 37, coolDown: 50000),
+					         new Shoot(radius: 9.4, count: 14, shootAngle: 40, projectileIndex: 3, coolDown: 700),
+					         new TimedTransition(14344, "death")
+                
+                
+            new State("death",
+                new Taunt(1.0, true, "You have beaten me this time... Next time you won't be so lucky..."),
+                new Shoot(45, projectileIndex: 3, count: 25),
+                new Shoot(45, projectileIndex: 4, count: 25),
                 new Suicide()
                 )
             ),
