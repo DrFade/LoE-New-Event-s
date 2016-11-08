@@ -67,7 +67,7 @@ namespace wServer.logic
                 new Shoot(radius: 5, count: 20, shootAngle: 45, projectileIndex: //addnumber, coolDown: 500),
                 new HpLessTransition(0.2, "Rage")
                 
-                
+            ),    
             new State("Rage",
                 new Taunt(1.0, true, "You have pushed me too far... Bear witness to my wrath mortal!"),
 		new Taunt(1.0, true, "DIE IN HELL, LET THE SUN CONSUME YOU!"),
@@ -79,7 +79,7 @@ namespace wServer.logic
 		new Shoot(radius: 9.4, count: 14, shootAngle: 40, projectileIndex: 3, coolDown: 700),	
 		new TimedTransition(14344, "death")
                 
-                
+            ),    
             new State("death",
                 new Taunt(1.0, true, "You have beaten me this time... Next time you won't be so lucky..."),
                 new Shoot(45, projectileIndex: 3, count: 25),
